@@ -4,7 +4,7 @@ import Breadcrumb from "components/breadcrumb"
 import { useSelector } from "react-redux"
 import { CiLocationOn } from "react-icons/ci"
 import Map from "react-map-gl"
-// import MapMarker from "assets/map_marker.svg"
+import YouTube from "react-youtube"
 
 const ViewProduct = () => {
   const { getProduct } = useApi()
@@ -15,6 +15,18 @@ const ViewProduct = () => {
     longitude: -2.5614306169482153,
     zoom: 11,
   })
+
+  const videOptions = {
+    height: "500",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+    },
+  }
+
+  const onVideoReady = (e) => {
+    e.target.pauseVideo()
+  }
 
   useEffect(() => {
     getProduct()
@@ -33,7 +45,8 @@ const ViewProduct = () => {
   return (
     <Fragment>
       <Breadcrumb pathItems={["Product", productData?.name]} actionType={"view"} />
-      <div className="w-full bg-white rounded border border-gray-light flex">
+      {/* main section */}
+      <section className="w-full bg-white rounded border border-gray-light flex mb-6">
         <div className="w-4/6 border-r border-r-gray-light">
           {/* image */}
           <div className="relative w-full">
@@ -120,7 +133,16 @@ const ViewProduct = () => {
             ) : null}
           </div>
         </div>
-      </div>
+      </section>
+      {/* video section */}
+      <section className="w-full bg-white rounded border border-gray-light flex flex-col p-4">
+        <div className="mb-4">Video</div>
+        <YouTube
+          videoId={productData?.video.split("=")[1]}
+          opts={videOptions}
+          onReady={onVideoReady}
+        />
+      </section>
     </Fragment>
   )
 }

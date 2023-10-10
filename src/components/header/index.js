@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header
       style={appConfig ? { background: appConfig.mainColor } : null}
-      className="w-full h-20 flex items-center px-12 border-b border-gray-light bg-white fixed top-0 left-0"
+      className="w-full h-20 flex items-center px-12 border-b border-gray-light bg-white fixed top-0 left-0 z-50"
     >
       {appConfigLoading ? (
         <Skeleton classes={"w-32 h-8 rounded-lg"} />
