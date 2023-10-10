@@ -5,6 +5,10 @@ import { useSelector } from "react-redux"
 import { CiLocationOn } from "react-icons/ci"
 import Map from "react-map-gl"
 import YouTube from "react-youtube"
+import TechnologyIcon from "assets/icons/technology"
+import BussinessModelIcon from "assets/icons/bussiness_model"
+import ClockIcon from "assets/icons/clock"
+import MoneyIcon from "assets/icons/money"
 
 const ViewProduct = () => {
   const { getProduct } = useApi()
@@ -142,6 +146,16 @@ const ViewProduct = () => {
           opts={videOptions}
           onReady={onVideoReady}
         />
+      </section>
+      {/* details section */}
+      <section className="w-full bg-white rounded border border-gray-light flex flex-col p-4">
+        <div className="mb-4">Offer details</div>
+        <div className="w-full flex flex-wrap">
+          <div className="w-1/2 mb-2">1</div>
+          <div className="w-1/2 mb-2">2</div>
+          <div className="w-1/2 mb-2">3</div>
+          <div className="w-1/2 mb-2">4</div>
+        </div>
       </section>
     </Fragment>
   )
