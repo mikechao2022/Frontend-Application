@@ -12,6 +12,7 @@ const useHttp = () => {
   HttpService.interceptors.response.use(
     (response) => response,
     async ({ error, response }) => {
+      console.log(error)
       if (response.status === 500) {
         toast.error("Server Error!")
       } else {
