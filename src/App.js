@@ -1,12 +1,11 @@
-import { Suspense } from "react"
-import Router from "./router/router"
-import { Routes } from "./router/routes/index"
+import Router from "router/router"
+import { Routes } from "router/routes/index"
 
 function App() {
   return (
-    <Suspense fallback={null}>
+    <div className="w-full h-screen overflow-y-auto">
       <Router Routes={Routes} />
-    </Suspense>
+    </div>
   )
 }
 
