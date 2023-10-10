@@ -1,6 +1,7 @@
 import useHttp from "./use_http"
 import { useDispatch } from "react-redux"
 import { setAppConfig, setAppConfigLoading } from "features/app_slice"
+import { setProductData, setGetProductDataLoading } from "features/product_slice"
 
 const useApi = () => {
   const dispatch = useDispatch()
@@ -20,7 +21,19 @@ const useApi = () => {
     }
   }
 
-  const exports = { getAppConfigs }
+  // get product
+  const getProduct = async () => {
+    try {
+      dispatch(setGetProductDataLoading(true))
+      const response = await HttpService.get(`/product/6781/`)
+      dispatch(setGetProductDataLoading(false))
+      dispatch(setProductData(response.data))
+    } catch ({ err, response }) {
+      dispatch(setGetProductDataLoading(false))
+    }
+  }
+
+  const exports = { getAppConfigs, getProduct }
   return exports
 }
 export default useApi
