@@ -3,7 +3,7 @@ import Layout from "layout"
 const Home = () => {
   return (
     <Layout>
-      <div>home</div>
+      <div className="text-2xl">Home Page</div>
     </Layout>
   )
 }

@@ -4,7 +4,7 @@ import { LuLayoutDashboard } from "react-icons/lu"
 export const NavigationData = [
   {
     id: 1,
-    title: "Main Page",
+    title: "Home",
     path: "/",
     icon: <AiOutlineHome fontSize={20} />,
   },

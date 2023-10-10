@@ -8,7 +8,10 @@ const Header = () => {
   const appConfig = useSelector((state) => state.app.appConfig)
   const appConfigLoading = useSelector((state) => state.app.appConfigLoading)
   return (
-    <header className="w-full h-20 flex items-center px-12 border-b border-gray-light bg-white fixed top-0 left-0">
+    <header
+      style={appConfig ? { background: appConfig.mainColor } : null}
+      className="w-full h-20 flex items-center px-12 border-b border-gray-light bg-white fixed top-0 left-0"
+    >
       {appConfigLoading ? (
         <Skeleton classes={"w-32 h-8 rounded-lg"} />
       ) : (

@@ -1,12 +1,34 @@
 import { NavigationData } from "navigation"
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+import Avatar from "assets/avatar.jpg"
+import { useSelector } from "react-redux"
+import Skeleton from "components/skeleton"
 
 const Sidebar = () => {
   const location = useLocation()
+  const appConfig = useSelector((state) => state.app.appConfig)
+  const appConfigLoading = useSelector((state) => state.app.appConfigLoading)
 
   return (
     <ul className="w-64 h-[calc(100vh-5rem)] border-r border-gray-light p-4">
+      {/* user section */}
+      {appConfigLoading ? (
+        <Skeleton classes={"w-full h-20 mb-4 rounded-lg"} />
+      ) : appConfig?.hasUserSection ? (
+        <div className="w-full h-20 mb-4 flex justify-between items-center">
+          <img
+            src={Avatar}
+            alt="user avatar"
+            className="w-20 h-20 rounded-full object-cover"
+          />
+          <div className="w-[calc(100%-5.5rem)] h-full flex flex-col justify-center">
+            <span className="text-lg font-bold">User Name</span>
+            <span className="text-sm">User Role</span>
+          </div>
+        </div>
+      ) : null}
+      {/* navigation links */}
       {NavigationData.map((item, index) => (
         <li
           key={index}
