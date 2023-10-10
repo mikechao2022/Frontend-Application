@@ -121,20 +121,6 @@ const ViewProduct = () => {
               {/* map */}
               <div className="w-full h-48">
                 {productData ? (
-                  // <Map
-                  //   mapboxApiAccessToken="pk.eyJ1IjoibW9oYW1tYWQtdmFhIiwiYSI6ImNsbmtremQ4YzI5eGMya3Jsc2kydHhyM2MifQ.USXFEyTj1bs0dFNnNyD7iQ"
-                  //   {...viewport}
-                  //   onViewportChange={(viewport) => setViewport(viewport)}
-                  //   mapStyle="mapbox://styles/mapbox/streets-v11"
-                  // >
-                  //   <Marker
-                  //     longitude={parseFloat(productData?.company?.address?.longitude)}
-                  //     latitude={parseFloat(productData?.company?.address?.latitude)}
-                  //   >
-                  //     <img src={MapMarker} alt="Marker" />
-                  //   </Marker>
-                  // </Map>
-
                   <Map
                     mapboxAccessToken="pk.eyJ1IjoibW9oYW1tYWQtdmFhIiwiYSI6ImNsbmtremQ4YzI5eGMya3Jsc2kydHhyM2MifQ.USXFEyTj1bs0dFNnNyD7iQ"
                     initialViewState={{

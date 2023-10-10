@@ -7,6 +7,9 @@ import AppLoading from "components/app_loading"
 import { Provider } from "react-redux"
 import { store } from "app/store"
 import { Toaster } from "react-hot-toast"
+// Require Editor CSS files.
+import "froala-editor/css/froala_style.min.css"
+import "froala-editor/css/froala_editor.pkgd.min.css"
 
 const LazyApp = lazy(() => import("./App"))
 const root = ReactDOM.createRoot(document.getElementById("root"))
