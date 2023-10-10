@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import Router from "router/router"
 import { Routes } from "router/routes/index"
 import useApi from "hooks/use_api"
+import Layout from "layout"
 
 function App() {
   const { getAppConfigs } = useApi()
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <div className="w-full h-screen overflow-y-auto">
-      <Router Routes={Routes} />
+      <Layout>
+        <Router Routes={Routes} />
+      </Layout>
     </div>
   )
 }

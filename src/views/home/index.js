@@ -1,10 +1,4 @@
-import Layout from "layout"
-
 const Home = () => {
-  return (
-    <Layout>
-      <div className="text-2xl">Home Page</div>
-    </Layout>
-  )
+  return <div className="text-2xl">Home Page</div>
 }
 export default Home
