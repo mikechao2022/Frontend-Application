@@ -187,6 +187,7 @@ const ViewProduct = () => {
                     ))}
                   </div>
                 </div>
+                <div>test</div>
               </div>
               {/* TRL */}
               <div className="w-1/2 mb-6 flex">
